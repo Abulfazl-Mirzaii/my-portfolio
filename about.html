@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About the author</title>
+<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            top: 0;
+            margin: 0;
+            width:100%;
+            height: 75px;
+            padding: 0;
+            position: fixed;
+            background-image: linear-gradient(#331c69,#010433);
+        }
+
+        nav span {
+            line-height: 75px;
+            padding: 0 10px;
+            font-size: 30px;
+            font-weight: bold;
+            float: left;
+            color: white;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            float: right;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        nav li {
+            list-style: none;
+            margin-right: 20px;
+            line-height: 45px;
+        }
+        nav li a {
+            font-size: 18px;
+            padding:0 20px;
+            color: white;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            color: #ff8c69;
+            transition: all 0.4s ease 0s;
+        }
+
+        main {
+            margin: 40px;
+            margin-top: 100px;
+        }
+        h1 {
+            top: 100px;
+            color: #333;
+            font-size: 24px;
+        }
+        p {
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .signature {
+            margin-top: 40px;
+            font-style: italic;
+        }
+        @media screen and (max-width: 625px) {
+            nav {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                height: 120px;
+            }
+            main {
+                margin: 5vh;
+                margin-top: 20vh;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="name">About Abulfazl Mirzaii</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>Hello and welcome to my portfolio! My name is Abulfazl Mirzaii, and I am a passionate web developer based in Kabul, Afghanistan. With a strong foundation in web development and project management, I strive to create visually appealing, functional, and user-friendly websites.</p>
+        <p>My skills include HTML, CSS, JavaScript, and various web development frameworks, allowing me to tackle a wide range of projects. I have a keen eye for detail and a commitment to delivering high-quality work that meets clients' needs and expectations.</p>
+        <p>I hold a certification in Front End Development with HTML, CSS, and JavaScript from FutureLearn, which has further enhanced my knowledge and expertise in the field. I believe in continuous learning and staying up-to-date with the latest technologies and trends to ensure I provide the best solutions for my clients.</p>
+        <p>Outside of web development, I enjoy exploring new technologies, staying active, and spending time with my family and friends.</p>
+        <p class="signature">If you have any questions or are interested in collaborating on a project, please feel free to reach out to me through my Contact page. I look forward to connecting with you!<br>
+        Best regards,<br>
+        Abulfazl Mirzaii</p>
+    </main>
+</body>
+</html>

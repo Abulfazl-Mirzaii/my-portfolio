@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            top: 0;
+            margin: 0;
+            width:100%;
+            height: 75px;
+            padding: 0;
+            position: fixed;
+            background-image: linear-gradient(#331c69,#010433);
+        }
+
+        nav span {
+            line-height: 75px;
+            padding: 0 20px;
+            font-size: 30px;
+            font-weight: bold;
+            float: left;
+            color: white;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            float: right;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        nav li {
+            list-style: none;
+            margin-right: 20px;
+            line-height: 45px;
+        }
+        nav li a {
+            font-size: 18px;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            color: #ff8c69;
+            transition: all 0.4s ease 0s;
+        }
+
+
+        main {
+            margin: 5vh;
+            margin-top: 15vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        p {
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 90%;
+            padding: 10px 5%;
+        }
+        input[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            
+        }
+        @media screen and (max-width: 625px) {
+            nav {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                height: 120px;
+            }
+            main{
+                margin-top: 20vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="name">Contact Abulfazl Mirzaii</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>    
+            <p>For inquiries, feedback, or collaboration opportunities, please don't hesitate to reach out:</p>
+            <p>Email: <a href="mailto:abulfazl.mirzaii@gmail.com">Abulfazl.mirzaii@gmail.com</a></p>
+            <p>Phone: +93 78 233 6905</p>
+            <p>Location: Kabul, Afghanistan (UTC+4:30)</p>
+            <p>Availability: Open for remote projects, currently accepting new clients</p>
+        <h2>Social Media Links</h2>
+        <ul>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/abulfazl-mirzaii/">Abulfazl Mirzaii</a></li>
+            <li>GitHub: <a href="https://github.com/Abulfazl-Mirzaii">Abulfazl-Mirzaii</a></li>
+            <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61551063358987">Abulfazl-Mirzaii</a></li>
+        </ul>
+        <h2>Contact Form</h2>
+        <form action="" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+        <script>
+
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                
+                const name = form['name'].value.trim();
+                const email = form['email'].value.trim();
+                const message = form['message'].value.trim();
+
+                const response = await fetch('./contact-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                // Check the response status
+                if (response.ok) {
+                    // Form submission was successful
+                    alert('Thank you for your message! I will get back to you as soon as possible.');
+                } else {
+                    // Form submission failed
+                    alert('There was an error submitting the form. Please try again later.');
+                }
+            });
+        </script>
+    </main>
+</body>
